@@ -12,4 +12,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://liyafly/sitemap.xml
+Sitemap: https://liyafly.com/sitemap.xml
