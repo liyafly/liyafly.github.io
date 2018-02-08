@@ -114,7 +114,7 @@
 <meta property="og:description" content="前言最近和一个朋友聊天的时候谈到了一些 hexo 的优化，并且给我提了一些建议，感受颇多。于是我就开始了新的折腾之旅，下面就是我这几天遇到的疑问和解决办法。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p2oqbdtcb.bkt.clouddn.com/15180177582894.jpg">
-<meta property="og:updated_time" content="2018-02-07T17:20:41.358Z">
+<meta property="og:updated_time" content="2018-02-08T02:27:35.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优化 Hexo 的总结和 Markdown 编辑器推荐">
 <meta name="twitter:description" content="前言最近和一个朋友聊天的时候谈到了一些 hexo 的优化，并且给我提了一些建议，感受颇多。于是我就开始了新的折腾之旅，下面就是我这几天遇到的疑问和解决办法。">
@@ -415,7 +415,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">4.5k</span>
+                <span title="字数统计">4.9k</span>
               
 
               
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:04</span>
+                <span title="阅读时长">0:05</span>
               
             </div>
           
@@ -483,7 +483,7 @@
 <h3 id="从-5-1-x-更新"><a href="#从-5-1-x-更新" class="headerlink" title="从 5.1.x 更新"></a>从 5.1.x 更新</h3><p>如果你想从<code>5.1.x</code>更新到<code>6.0.x</code>，请看 <a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md" target="_blank" rel="noopener">这里</a> 。</p>
 <h3 id="一般的更新"><a href="#一般的更新" class="headerlink" title="一般的更新"></a>一般的更新</h3><p>你可以通过如下命令更新到最新的 master 分支：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<p>如果你遇到了这样的错误《<strong>Commit your changes or stash them before you can merge</strong>》你可以用 NexT 根据 <a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md" target="_blank" rel="noopener">Hexo 数据文件特性</a> 进行更新。如果你是 Git 大神，想必自会解决吧！</p>
+<p>如果你遇到了这样的错误《<strong>Commit your changes or stash them before you can merge</strong>》<br>这里有根据官方提供的两种方法，其中，第一个 Hexo 方法，现在不太适用于 Hexo 3.0 以上版本。因此我推荐用 NexT 方法，即将所有需要配置的放在<code>hexo/source/_data/next.yml</code> 下，如果在新的更新中出现了任何新的选项，你都只需从<code>next/_config.yml</code>复制出来放到<code>source/_data/next.yml</code>下，来配置你想要选项的。这个便是通过 Hexo 数据文件的方法进行的。具体步骤请看 <a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md" target="_blank" rel="noopener">Hexo 数据文件特性</a> 进行更新。如果你是 Git 大神，想必自会解决吧！这里就不讨论使用 Git 的操作了。</p>
 <p>还有问题的话，可以去 <code>NexT</code>在  <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Github</a> 上的新仓库中去提 <code>issues</code>，并仔细阅读<code>README</code>。</p>
 <h1 id="Hexo-的部署和托管"><a href="#Hexo-的部署和托管" class="headerlink" title="Hexo 的部署和托管"></a>Hexo 的部署和托管</h1><p>Hexo 博客的部署和托管有很多方式，最常见的，资料最多的就是通过 GitHub 来搭建 Hexo 博客，后期在部署到自己的 VPS 上，通过 VPS 上的 Web 服务器来访问博客的内容。也有人选择 Netlify 这种更加简单的托管方式，并且自动抓取你上传到 GitHub 的静态文件，通过绑定的域名访问。下面就分别介绍一下两者。</p>
 <h2 id="部署到自己的VPS"><a href="#部署到自己的VPS" class="headerlink" title="部署到自己的VPS"></a>部署到自己的VPS</h2><p>当你自己有 VPS 的时候，自己博客可以同时托管到 GitHub 和 自己的 VPS 上。网上有很多教程，我列出两篇比较完整和相近的文章供大家参考。</p>
@@ -504,8 +504,8 @@
 </ol>
 <h1 id="NexT-评论系统"><a href="#NexT-评论系统" class="headerlink" title="NexT 评论系统"></a>NexT 评论系统</h1><p>在最新的<code>6.0.x</code>版本里，NexT 集成了一些新的评论系统，除了老牌的 Disqus 以外，最让我心动是 Valine 和 Gitment 这两个。</p>
 <h2 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a><a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="noopener">Gitment</a></h2><p>其中 Gitment 是受 GitHub 的 <code>issues</code> 启发而开发的，还支持 Markdown 语法。一开始很喜欢很看好这个评论系统，但作者已经快一年没有更新过或者优化了。此外有一个缺点，就是不能匿名，必须登录 GitHub 账号，进行评论，并且每一篇文章需要自己稍微手动配置一下。最要命的是它是相当于 <code>issues</code> ，意味着你会不断的收到邮件提醒。所以我放弃了。</p>
-<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a><a href="https://valine.js.org" target="_blank" rel="noopener">Valine</a></h2><p>Valine 是我在查资料的时候看见有一个博主写了一篇关于它的文章。看了后，很是心动。正好新版的 NexT 集成了它，就用它了。</p>
-<p>Valine，和 Gitment 具有相同的一点就是支持 Markdown 语法，此外它支持匿名和用邮箱登录。不同的是 Valine 的管理是通过 leancloud 完成的。意味着，你需要注册一个 leancloud，来完成相关的评论管理工作。这样已经很简单了。相比 Disqus 你需要采用代理来说很不错了。相关的设置，可以参考 <a href="https://valine.js.org" target="_blank" rel="noopener">Valine 官网上的说明</a>。</p>
+<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a><a href="https://valine.js.org" target="_blank" rel="noopener">Valine</a></h2><p>Valine 是我在查资料的时候看见有一个博主写了一篇关于它的文章。看了后，很是心动。虽然配置也有些繁琐但比 Gitment 好多了。正好新版的 NexT 集成了它，于是就用它了。</p>
+<p>Valine，和 Gitment 具有相同的一点就是支持 Markdown 语法，此外它支持匿名和用邮箱登录。不同的是 Valine 的管理是通过 leancloud 完成的。意味着，你需要注册一个 leancloud，来完成相关的评论管理工作。这样已经很简单了。相比 Disqus 你需要采用代理来说很不错了。在最新的 NexT 里已经集成了，所以你只需在 leancloud 中建立应用，获取到其  appId, appKey 并在<code>主题配置文件</code>里找到 valine 的字段进行配置就好。同时你有自己的域名的话，为了你的数据安全，需要设置自己的<code>安全域名</code>。当然其他主题也可以进行配置，具体请参考 <a href="https://valine.js.org" target="_blank" rel="noopener">Valine 官网上的说明</a>。</p>
 <p>为什么不推荐其他的评论系统？<br>因为其他的要不不干了，要不需要备案什么的比较麻烦。 （= = 我懒）</p>
 <h1 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h1><p>NexT 的 SEO 优化，我只推荐谷歌，不要问百度的怎么了。百度太特了，放着标准化的不用，非得用自己的。</p>
 <h2 id="Google-Webmaster-tools"><a href="#Google-Webmaster-tools" class="headerlink" title="Google Webmaster tools"></a>Google Webmaster tools</h2><p>设置 <a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Google站点管理工具</a> 的验证字符串，用于提交 sitemap ( 在 Google Search Console 上有很多验证方式，这里推荐的是 NexT 官网上提供的验证方法。）</p>
@@ -533,11 +533,14 @@
 <h2 id="提交robots-txt"><a href="#提交robots-txt" class="headerlink" title="提交robots.txt"></a>提交robots.txt</h2><p>robots.txt 是一种存放于网站根目录下的 ASCII 编码的文本文件，它的作用是告诉搜索引擎此网站中哪些内容是可以被爬取的，哪些是禁止爬取的。robots.txt 放在博客目录下的 source 文件夹中，博客生成后在站点目录 /public/ 下。<br>我的文件内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /tags/</span><br><span class="line">Allow: /about/</span><br><span class="line">Allow: /categories/</span><br><span class="line"></span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://liyafly.com/sitemap.xml</span><br></pre></td></tr></table></figure>
 <p>robots.txt 文件更新至网站后可进入 Google Search Console - 抓取 - robots.txt 测试工具进行测试。</p>
-<h1 id="Markdown-编辑器推荐"><a href="#Markdown-编辑器推荐" class="headerlink" title="Markdown 编辑器推荐"></a>Markdown 编辑器推荐</h1><p>Markdown 编辑器有很多很多种，真的要写一篇推荐的话，可能会有很多要介绍的。有时间，我也会专门写一篇文章来介绍。现在我就调一些比较常用和好用的给大家。</p>
+<h1 id="Markdown-编辑器推荐"><a href="#Markdown-编辑器推荐" class="headerlink" title="Markdown 编辑器推荐"></a>Markdown 编辑器推荐</h1><p>Markdown 编辑器有很多很多种，真的要写一篇推荐的话，可能会有很多要介绍的。有时间，我也会专门写一篇文章来介绍。现在我就挑一些比较常用和好用的给大家。</p>
 <h2 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h2><p>比较喜欢写文章，而不注重技术类型，简书是一个不错的平台。当然在 17 年年末的时候出现了严重歧视程序员的事件，导致很多技术写作人员的转战其他平台。不介意的话可以在该平台写作。具有跨平台性。</p>
-<h2 id="文本编辑器-插件"><a href="#文本编辑器-插件" class="headerlink" title="文本编辑器 + 插件"></a>文本编辑器 + 插件</h2><p>这类文本编辑器很多，比较常用的有Atom、Visual Studio Code、Sublime Text 3、Vim 等。 有很多插件，这里就不一一介绍了。这类比较轻便，而且用的很多都是大神和单纯的写文章的人群。具有跨平台性，有良好的数学公式插件，方便显示。</p>
+<h2 id="文本编辑器-插件"><a href="#文本编辑器-插件" class="headerlink" title="文本编辑器 + 插件"></a>文本编辑器 + 插件</h2><p>这类文本编辑器很多，比较常用的有Atom、Visual Studio Code、Sublime Text 3、Vim 等。 有很多插件，这里就不一一介绍了。这类比较轻便，而且用的多数是大神和单纯的写文章的人群。具有跨平台性，有良好的数学公式插件，自定义性强，方便显示。</p>
 <h2 id="laverna"><a href="#laverna" class="headerlink" title="laverna"></a><a href="https://laverna.cc" target="_blank" rel="noopener">laverna</a></h2><p>贴图方便。现在在用的新秀，功能基本都有，目前还没有看到付费计划，没有 Android 版本和 iOS 版本，其他三大平台都有。</p>
 <h2 id="MWeb"><a href="#MWeb" class="headerlink" title="MWeb"></a><a href="https://itunes.apple.com/cn/app/mweb-pro-markdown-writing/id954188948?l=zh&amp;ls=1&amp;mt=12" target="_blank" rel="noopener">MWeb</a></h2><p>独占 macOS 和 iOS 平台。对比其他的特优秀的写作软件来说，价格感人。功能很多：支持一键发布文章，一键上传图床，具有文档管理功能等等，特别好用的一个软件。但只可惜只在 Apple 的生态圈。此外，作者在<a href="http://zh.mweb.im" target="_blank" rel="noopener">官网</a>上分享了很多小窍门。有兴趣的同学可以去看看。</p>
+<hr>
+<p>2018.2.8 更新，完善内容并修改错别字。</p>
+<hr>
 
       
     </div>
@@ -713,6 +716,12 @@
 
           
           
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
 
           
           
@@ -767,7 +776,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">5k</span>
+    <span title="站点总字数">6k</span>
   
 
   
@@ -776,7 +785,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">0:05</span>
+    <span title="站点总阅读时长">0:06</span>
   
 </div>
 
