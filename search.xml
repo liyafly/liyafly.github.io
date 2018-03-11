@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Swift 的正则表达式与 IO 处理总结]]></title>
+    <url>%2F%2Fpost%2Fswift-regex-and-IO.html</url>
+    <content type="text"><![CDATA[晚上写。]]></content>
+      <categories>
+        <category>iOS</category>
+        <category>Swift</category>
+      </categories>
+      <tags>
+        <tag>Swift</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一个壁纸应用的计划]]></title>
     <url>%2F%2Fpost%2Fwallpaper-ios-plan.html</url>
     <content type="text"><![CDATA[马上就是新的学期，假期折腾了乱七八糟的东西。渐渐的发现自己对一些壁纸的需求有点多，但很多壁纸软件上的图片千篇一律，也可能是个人审美不同，毕竟众口难调，于是想做一个属于自己的壁纸软件，也当来自己一个检验，并写下这篇文章来督促自己。下面是一个大体概括： 图片在一些无版权的图片网站。如 Unsplash 上挑选一些精美的图片，放到自己的服务器上。可以的话做一下分类，但精力有限。 iOS 客户端尽量简洁，去简单学一下 UI 设计，做一些简单人性化的交互。 网站 —— 有能力做就做毕竟图片放到服务器上是通过图床做的，可以的话做一个网站，也方便大家在电脑上使用并下载好看的图片。 后记至于能做成什么样就后说，慢慢开始做吧，骚年！]]></content>
