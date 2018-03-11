@@ -105,18 +105,18 @@
   <meta name="keywords" content="Swift," />
 
 
-<meta name="description" content="晚上写。">
+<meta name="description" content="绝大多数编程语言可以进行正则匹配和文件的 I/O 操作，但也有方不方便的区别。比如你用 C/C++ 和 Java 那就很方便，当然 Python 写起来也很好。那么苹果最近一直强推的 Swift 语言呢？经过我一番试探，感觉其在文件，尤其是对文本文件操作有些不友好。毕竟现在很多数据都是存储在数据库或者简化为 JSON 格式了，没有必要按照初学 C 语言那样进行文本文件的按块/行读写操作了。但由于个">
 <meta name="keywords" content="Swift">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swift 的正则表达式与 IO 处理总结">
+<meta property="og:title" content="Swift 的正则表达式与 I&#x2F;O 处理总结">
 <meta property="og:url" content="https://liyafly.com/post/swift-regex-and-IO.html">
 <meta property="og:site_name" content="MyFly&#39;Blog">
-<meta property="og:description" content="晚上写。">
+<meta property="og:description" content="绝大多数编程语言可以进行正则匹配和文件的 I/O 操作，但也有方不方便的区别。比如你用 C/C++ 和 Java 那就很方便，当然 Python 写起来也很好。那么苹果最近一直强推的 Swift 语言呢？经过我一番试探，感觉其在文件，尤其是对文本文件操作有些不友好。毕竟现在很多数据都是存储在数据库或者简化为 JSON 格式了，没有必要按照初学 C 语言那样进行文本文件的按块/行读写操作了。但由于个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-11T06:49:18.596Z">
+<meta property="og:updated_time" content="2018-03-11T13:17:07.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift 的正则表达式与 IO 处理总结">
-<meta name="twitter:description" content="晚上写。">
+<meta name="twitter:title" content="Swift 的正则表达式与 I&#x2F;O 处理总结">
+<meta name="twitter:description" content="绝大多数编程语言可以进行正则匹配和文件的 I/O 操作，但也有方不方便的区别。比如你用 C/C++ 和 Java 那就很方便，当然 Python 写起来也很好。那么苹果最近一直强推的 Swift 语言呢？经过我一番试探，感觉其在文件，尤其是对文本文件操作有些不友好。毕竟现在很多数据都是存储在数据库或者简化为 JSON 格式了，没有必要按照初学 C 语言那样进行文本文件的按块/行读写操作了。但由于个">
 
 
 
@@ -132,7 +132,7 @@
     sidebar: "",
   };
 </script>
-  <title>Swift 的正则表达式与 IO 处理总结 | MyFly'Blog</title>
+  <title>Swift 的正则表达式与 I/O 处理总结 | MyFly'Blog</title>
   
 
 
@@ -342,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Swift 的正则表达式与 IO 处理总结</h1>
+          <h1 class="post-title" itemprop="name headline">Swift 的正则表达式与 I/O 处理总结</h1>
         
 
         <div class="post-meta">
@@ -420,7 +420,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">5</span>
+                <span title="字数统计">5.7k</span>
               
 
               
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">0:01</span>
+                <span title="阅读时长">0:06</span>
               
             </div>
           
@@ -454,7 +454,27 @@
       
 
       
-        <p>晚上写。</p>
+        <p>绝大多数编程语言可以进行正则匹配和文件的 I/O 操作，但也有方不方便的区别。比如你用 C/C++ 和 Java 那就很方便，当然 Python 写起来也很好。那么苹果最近一直强推的 Swift 语言呢？经过我一番试探，感觉其在文件，尤其是对文本文件操作有些不友好。毕竟现在很多数据都是存储在数据库或者简化为 JSON 格式了，没有必要按照初学 C 语言那样进行文本文件的按块/行读写操作了。但由于个人课程实验需要，于是用 Swift 写了一下，并总结出来一些点。</p>
+<a id="more"></a>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>如果不懂正则表达式的可以去看看正 <a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">则表达式 30 分钟入门教程</a> 或者参考 <a href="https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149" target="_blank" rel="noopener">8 个常用正则表达式</a> 吧。</p>
+<p>Swift 虽然是一门先进的编程语言，但至今为止并没有在语言层面上支持正则表达式。</p>
+<p>可能是 app 并不需要处理很多文本匹配的功能，因此开发者不是很依赖正则表达式。但进行正则匹配的话，可以用 Cocoa 中的  <code>NSRegularExpression</code> 写一个简单的包装。喵神在其 《 Swift 必备 Tips 》 中写了一章正则的详解，如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">RegexHelper</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> regex: <span class="type">NSRegularExpression</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> pattern: <span class="type">String</span>) <span class="keyword">throws</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> regex = <span class="type">NSRegularExpression</span>(pattern: pattern,</span><br><span class="line">            options: .caseInsensitive)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">match</span><span class="params">(<span class="number">_</span> input: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> matches = regex.matches(<span class="keyword">in</span>: input,</span><br><span class="line">                    options: [],</span><br><span class="line">                    range: <span class="type">NSMakeRange</span>(<span class="number">0</span>, input.utf16.<span class="built_in">count</span>))</span><br><span class="line">        <span class="keyword">return</span> matches.<span class="built_in">count</span> &gt; <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mailPattern =</span><br><span class="line"><span class="string">"^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]&#123;2,6&#125;)$"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> matcher: <span class="type">RegexHelper</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    matcher = <span class="keyword">try</span> <span class="type">RegexHelper</span>(mailPattern)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> maybeMailAddress = <span class="string">"onev@onevcat.com"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> matcher.match(maybeMailAddress) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"有效的邮箱地址"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是一个简单的匹配判断，而我需要的是将匹配的结果返回，于是我参照喵神的代码和看 <code>NSRegularExpression</code> 文档 写了一个函数：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">matches</span><span class="params">(<span class="keyword">for</span> regex: String, <span class="keyword">in</span> text: String)</span></span> -&gt; [<span class="type">String</span>] &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> regex = <span class="keyword">try</span> <span class="type">NSRegularExpression</span>(pattern: regex, options: .caseInsensitive)</span><br><span class="line">        <span class="keyword">let</span> nsString = text <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">        <span class="keyword">let</span> results = regex.matches(<span class="keyword">in</span>: text, options: [], range: <span class="type">NSMakeRange</span>(<span class="number">0</span>, nsString.length))</span><br><span class="line">        <span class="keyword">return</span> results.<span class="built_in">map</span> &#123;</span><br><span class="line">            nsString.substring(with: $<span class="number">0</span>.range)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"invalid regex : <span class="subst">\(error.localizedDescription)</span>"</span>)</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用法如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> matched = matches(<span class="keyword">for</span>: <span class="string">"([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]&#123;2,6&#125;)"</span>, <span class="keyword">in</span>: <span class="string">"xxxxx@gmail.com,sss@gmail.com"</span>)</span><br><span class="line"><span class="built_in">print</span>(matched) </span><br><span class="line"><span class="comment">// ["xxxxx@gmail.com", "sss@gmail.com"]</span></span><br></pre></td></tr></table></figure>
+<p>这只是一个函数，如果有更高或者更灵活的需求，那么可以对 <code>String</code><br>进行一个扩展，就可以直接对字符串进行操作。这个函数写的就不如喵神的有更好的扩展性，但能满足一般使用了。</p>
+<h1 id="I-O-操作"><a href="#I-O-操作" class="headerlink" title="I/O 操作"></a>I/O 操作</h1><h2 id="类似-C-语言文件操作"><a href="#类似-C-语言文件操作" class="headerlink" title="类似 C 语言文件操作"></a>类似 C 语言文件操作</h2><p>如果想体验用 Swift 写类似 C 语言那种文件操作，那就有很多种方法。这里我不过多进行总结，可以自行谷歌，这里我放一个有关使用FileManager，FileHandle等类来实现的方法博客。</p>
+<p><a href="http://www.hangge.com/blog/cache/detail_527.html" target="_blank" rel="noopener">Swift - 文件，文件夹操作大全</a> 这个博客可以说是总结很全了，也很详细。虽然代码是 <code>Swift3.0</code> 的，也使用于 <code>Swift4.0</code> 版本（不得不说 Swift 版本更新太坑了……）。</p>
+<h2 id="逐行读取文件"><a href="#逐行读取文件" class="headerlink" title="逐行读取文件"></a>逐行读取文件</h2><p>基本上没人会真的需要逐行读取文件，iOS 开发中更没有从文件里逐行读取。但找这个相关功能文档时，发现真的有，方法很多种，都是用 Swift 写 macOS 应用的大神根据  <code>Cocoa Streams</code> 文档写的。</p>
+<p>下面的代码出自 <a href="https://code.i-harness.com/zh-CN/q/177158d" target="_blank" rel="noopener">osx - 在Swift中逐行阅读文件/ URL</a> 这个论坛。如果有误，希望大家告诉我原地址，在重新标明出处。</p>
+<p>下面的方法是根据 NSFileHandle 的相关文档及各种解决方案的启发。并使用了 <code>guard</code> 和新的 <code>Data</code> 值类型。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StreamReader</span>  </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> encoding : <span class="type">String</span>.<span class="type">Encoding</span></span><br><span class="line">    <span class="keyword">let</span> chunkSize : <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> fileHandle : <span class="type">FileHandle</span>!</span><br><span class="line">    <span class="keyword">let</span> delimData : <span class="type">Data</span></span><br><span class="line">    <span class="keyword">var</span> buffer : <span class="type">Data</span></span><br><span class="line">    <span class="keyword">var</span> atEof : <span class="type">Bool</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>?(path: <span class="type">String</span>, delimiter: <span class="type">String</span> = <span class="string">"\n"</span>, encoding: <span class="type">String</span>.<span class="type">Encoding</span> = .utf8,</span><br><span class="line">          chunkSize: <span class="type">Int</span> = <span class="number">4096</span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> fileHandle = <span class="type">FileHandle</span>(forReadingAtPath: path),</span><br><span class="line">            <span class="keyword">let</span> delimData = delimiter.data(using: encoding) <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">self</span>.encoding = encoding</span><br><span class="line">        <span class="keyword">self</span>.chunkSize = chunkSize</span><br><span class="line">        <span class="keyword">self</span>.fileHandle = fileHandle</span><br><span class="line">        <span class="keyword">self</span>.delimData = delimData</span><br><span class="line">        <span class="keyword">self</span>.buffer = <span class="type">Data</span>(capacity: chunkSize)</span><br><span class="line">        <span class="keyword">self</span>.atEof = <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">deinit</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.close()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// Return next line, or nil on EOF.</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">nextLine</span><span class="params">()</span></span> -&gt; <span class="type">String</span>? &#123;</span><br><span class="line">        <span class="built_in">precondition</span>(fileHandle != <span class="literal">nil</span>, <span class="string">"Attempt to read from closed file"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Read data chunks from file until a line delimiter is found:</span></span><br><span class="line">        <span class="keyword">while</span> !atEof &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> range = buffer.range(of: delimData) &#123;</span><br><span class="line">                <span class="comment">// Convert complete line (excluding the delimiter) to a string:</span></span><br><span class="line">                <span class="keyword">let</span> line = <span class="type">String</span>(data: buffer.subdata(<span class="keyword">in</span>: <span class="number">0</span>..&lt;range.lowerBound), encoding: encoding)</span><br><span class="line">                <span class="comment">// Remove line (and the delimiter) from the buffer:</span></span><br><span class="line">                buffer.removeSubrange(<span class="number">0</span>..&lt;range.upperBound)</span><br><span class="line">                <span class="keyword">return</span> line</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">let</span> tmpData = fileHandle.readData(ofLength: chunkSize)</span><br><span class="line">            <span class="keyword">if</span> tmpData.<span class="built_in">count</span> &gt; <span class="number">0</span> &#123;</span><br><span class="line">                buffer.append(tmpData)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// EOF or read error.</span></span><br><span class="line">                atEof = <span class="literal">true</span></span><br><span class="line">                <span class="keyword">if</span> buffer.<span class="built_in">count</span> &gt; <span class="number">0</span> &#123;</span><br><span class="line">                    <span class="comment">// Buffer contains last line in file (not terminated by delimiter).</span></span><br><span class="line">                    <span class="keyword">let</span> line = <span class="type">String</span>(data: buffer <span class="keyword">as</span> <span class="type">Data</span>, encoding: encoding)</span><br><span class="line">                    buffer.<span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">                    <span class="keyword">return</span> line</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// Start reading from the beginning of file.</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">rewind</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">        fileHandle.seek(toFileOffset: <span class="number">0</span>)</span><br><span class="line">        buffer.<span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">        atEof = <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// Close the underlying file. No reading must be done after calling this method.</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">close</span><span class="params">()</span></span> -&gt; <span class="type">Void</span> &#123;</span><br><span class="line">        fileHandle?.closeFile()</span><br><span class="line">        fileHandle = <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">StreamReader</span> : <span class="title">Sequence</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">makeIterator</span><span class="params">()</span></span> -&gt; <span class="type">AnyIterator</span>&lt;<span class="type">String</span>&gt; &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">AnyIterator</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">self</span>.nextLine()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用法：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> aStreamReader = <span class="type">StreamReader</span>(path: <span class="string">"/path/to/file"</span>) &#123;</span><br><span class="line">    <span class="keyword">defer</span> &#123;</span><br><span class="line">        aStreamReader.close()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">let</span> line = aStreamReader.nextLine() &#123;</span><br><span class="line">        <span class="built_in">print</span>(line)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>可以看出使用 Swift 进行文件操作是很不方便的。如果写的够多，并熟悉 Cocoa 框架的人来说，并没有多难。</p>
+<p>正则和文件操作对 iOS/macOS 开发来说用的地方并不多，真正需要的地方也是很简单。如果再遇到这种实验课程，还是用 Java 吧！毕竟类多，方法多。</p>
 
       
     </div>
@@ -476,7 +496,7 @@
     <strong>本文作者： </strong>李亚非</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://liyafly.com/post/swift-regex-and-IO.html" title="Swift 的正则表达式与 IO 处理总结">https://liyafly.com/post/swift-regex-and-IO.html</a>
+    <a href="https://liyafly.com/post/swift-regex-and-IO.html" title="Swift 的正则表达式与 I/O 处理总结">https://liyafly.com/post/swift-regex-and-IO.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -562,8 +582,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -685,6 +714,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.</span> <span class="nav-text">正则表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#I-O-操作"><span class="nav-number">2.</span> <span class="nav-text">I/O 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类似-C-语言文件操作"><span class="nav-number">2.1.</span> <span class="nav-text">类似 C 语言文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逐行读取文件"><span class="nav-number">2.2.</span> <span class="nav-text">逐行读取文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -710,7 +755,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">9k</span>
+    <span title="站点总字数">14k</span>
   
 
   
@@ -719,7 +764,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点总阅读时长">0:09</span>
+    <span title="站点总阅读时长">0:14</span>
   
 </div>
 
