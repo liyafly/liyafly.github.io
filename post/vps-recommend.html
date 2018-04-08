@@ -51,19 +51,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.1.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/atin.png?v=6.0.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/atin.png?v=6.1.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.png?v=6.1.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.png?v=6.1.0">
 
 
-  <link rel="mask-icon" href="/images/kk.svg?v=6.0.6" color="#222">
+  <link rel="mask-icon" href="/images/kk.svg?v=6.1.0" color="#222">
 
 
 
@@ -78,7 +78,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.0.6',
+    version: '6.1.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
     fastclick: false,
@@ -101,9 +101,7 @@
 
 
 
-  
-
-<meta name="description" content="上一篇文章说到，当你在搭建 Hexo 的时候可能会部署到自己的 VPS，那么就有小伙伴说了，我还没有 VPS 怎么办？两个方法，一是不用呗，又没有免费的 VPS 提供，干嘛要花不必要的钱。二是真的有钱而且想通过 VPS 做一些自己要做的东西花可以选择几家比较好的进行购买。 那么 VPS 除了可以托管网页还可以干嘛呢？那就有很多好玩的东西可以折腾了。比如爱国行为和自己的网盘资源中转等等。">
+  <meta name="description" content="上一篇文章说到，当你在搭建 Hexo 的时候可能会部署到自己的 VPS，那么就有小伙伴说了，我还没有 VPS 怎么办？两个方法，一是不用呗，又没有免费的 VPS 提供，干嘛要花不必要的钱。二是真的有钱而且想通过 VPS 做一些自己要做的东西花可以选择几家比较好的进行购买。 那么 VPS 除了可以托管网页还可以干嘛呢？那就有很多好玩的东西可以折腾了。比如爱国行为和自己的网盘资源中转等等。">
 <meta name="keywords" content="VPS推荐">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VPS 推荐">
@@ -212,7 +210,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -229,6 +227,7 @@
         
         
           
+  
   <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
@@ -238,6 +237,7 @@
         
         
           
+  
   <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
@@ -247,6 +247,7 @@
         
         
           
+  
   <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
@@ -256,7 +257,8 @@
         
         
           
-  <li class="menu-item menu-item-categories">
+  
+  <li class="menu-item menu-item-categories menu-item-active">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
 </li>
@@ -265,6 +267,7 @@
         
         
           
+  
   <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
@@ -422,7 +425,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/post/vps-recommend.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/post/vps-recommend.html" itemprop="commentCount"></span>
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/post/vps-recommend.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -442,7 +445,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">字数统计：</span>
                 
                 <span title="字数统计">2.3k</span>
               
@@ -456,7 +459,7 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">阅读时长&asymp;</span>
                 
                 <span title="阅读时长">0:02</span>
               
@@ -776,8 +779,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heartbeat"></i>
+  <span class="with-love" id="animate">
+    <i class="fa fa-"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">李亚非</span>
 
@@ -811,7 +814,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.6</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.1.0</div>
 
 
 
@@ -892,32 +895,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.1.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.6"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.1.0"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.1.0"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.1.0"></script>
 
 
 
