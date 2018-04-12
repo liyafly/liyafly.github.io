@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Carthage 和 CocoaPods 的使用]]></title>
+    <url>%2F%2Fpost%2FCarthage-and-CocoaPods.html</url>
+    <content type="text"><![CDATA[在 iOS 和 macOS 系列的开发中，我们会用到很多第三方框架来提高效率。目前第三方框架支持导入工程的方式很多，最常用的便是 CocoaPods 和 Carthage 这两个管理工具。关于上述两个的优缺点已经有很多文章介绍了，笔者只是将其使用方式记录下来，方便以后使用。 CocoaPods安装和更新安装非常简单，按照官网的指导就可以很轻松的进行安装和更新。 1$ sudo gem install cocoapods 这样我们就安装好 CocoaPods 了，如果出现一些网络问题，很大一部分原因是没有进行科学上网，也有很多其他的解决方案，本文就不在过多的介绍。 更新的话，重新安装 CocoaPods 就可以。或者更新为预览版本 1$ sudo gem install cocoapods --pre 使用接下来就可以在工程中导入第三方框架，来方便的工作。 首先在你的工程下创建一个名为 Podfile 的文件（注意没有任何后缀）。然后在这个文件里添加你需要的第三方框架。 1234 target &apos;MyAppNmae&apos; do pod &apos;Alamofire&apos;, &apos;~&gt; 4.7&apos; pod &apos;Charts&apos;end 或者 1234567source &apos;https://github.com/CocoaPods/Specs.git&apos;platform :ios, &apos;10.0&apos;use_frameworks!target &apos;&lt;Your Target Name&gt;&apos; do pod &apos;Alamofire&apos;, &apos;~&gt; 4.7&apos;end 按上述例子写好后进入工程的目录下运行 1$ pod install 出现 pods installed 字样就是成功了。官方帮助文档如果需要更多的方法，可以参考 CocoaPods 的官方文档 Carthage安装和更新使用 Homebrew 安装 12$ brew update$ brew install carthage 升级 12$ brew update$ brew upgrade carthage 卸载的话利用 Homebrew 卸载就好。 1sudo brew uninstall carthage 使用进入你的工程下，创建名为 Cartfile （ 同 Podfile ）。 在其编辑，添加依赖的第三方框架库 1github &quot;Alamofire/Alamofire&quot; ~&gt; 4.7 然后运行 $ carthage update 便可 帮助文档剩下需要将第三方库的一些动态文件添加到工程里。由于本人能力有限，不会制作动图之类的，如何引入 Carthage 依赖库到 Xcode，这部分，可以参考 Carthage的使用 和 Carthage 官方文档说明的 Adding frameworks to an application 内容]]></content>
+      <categories>
+        <category>开发工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Swift 中 Substring 的方法使用]]></title>
     <url>%2F%2Fpost%2Fswift-substring-methods.html</url>
     <content type="text"><![CDATA[在我初学 Java/C++ 时，经常遇到处理字符串的问题，很多都是截取字符串或者对字符串进行特定的处理。超级多的语法糖写起来很是方便，我曾经也是相信 Swift 在 String 类型上有很多的干货。但在 Swift 4 之前，其对字符串截取依然不是很方便。 最近写一个实验的时候发现 Swift 4 里出现了一个叫 Substring 的新特性，在 Java 里 Substring 是对字符串截取的一个方法，那在 Swift 里也是一样的，于是去看了下文档。在 Swift 4 里 String 变成一个集合类型，可以同 Array 等 Collection 类型一样方便的进行操作。 Substring 中的几个实用方法dropFirst我在实验中发现 Substring 的第一个方法是 func dropFirst(Int)，用法和他的名字一样，从集合开始删除的元素数量。 当然也有从后面删除的方法 func dropLast(Int) 12345let text = "hello world"let str = text.dropFirst(6)let string = text.dropLast(3)print(str) // worldprint(string) // hello wo prefixfunc prefix(_ maxLength: Int) -&gt; Substring 这个方法是截取你所需要字符串长度。例子如下： 12345let text = "hello world"let str = text.prefix(7)let string = text.prefix(15)print(str) // hello wprint(string) // hello world 与它相近的还有 suffix，它们很多方法可以使用，具体可以参考苹果的文档。 相关文档和参考资料前天我写完实验后仔细看了看完苹果的文档，还找到了卓大翻译了一篇相关文章，和图大去年写的文档，收获很多。还需努力学习。 Swift 中 Substring 与 String 你需要了解的 Swift 4 新东西之 Substring 此外还有一篇文章分析的也不错：swift4 为什么要整一个SubString]]></content>

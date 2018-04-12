@@ -101,25 +101,25 @@
 
 
 
-  <meta name="description" content="新的一年开始了，虽然已经过去了十二分之一，没有写年终总结但还是要迎接新面貌嘛。大学生活也已经度过了四分之三了，真的是很快，想想这几年的大学生活什么都没有记下来就有点亏亏的感觉，当然也是因为自己变的有点懒有关，只能赖自己太懒惰了。那么今年开始接着写东西吧。">
-<meta name="keywords" content="iOS,swift,乱七八糟，">
+  <meta name="description" content="在 iOS 和 macOS 系列的开发中，我们会用到很多第三方框架来提高效率。目前第三方框架支持导入工程的方式很多，最常用的便是 CocoaPods 和 Carthage 这两个管理工具。关于上述两个的优缺点已经有很多文章介绍了，笔者只是将其使用方式记录下来，方便以后使用。">
+<meta name="keywords" content="工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新年新面貌">
-<meta property="og:url" content="https://liyafly.com/post/新年新面貌.html">
+<meta property="og:title" content="Carthage 和 CocoaPods 的使用">
+<meta property="og:url" content="https://liyafly.com/post/Carthage-and-CocoaPods.html">
 <meta property="og:site_name" content="MyFly&#39;Blog">
-<meta property="og:description" content="新的一年开始了，虽然已经过去了十二分之一，没有写年终总结但还是要迎接新面貌嘛。大学生活也已经度过了四分之三了，真的是很快，想想这几年的大学生活什么都没有记下来就有点亏亏的感觉，当然也是因为自己变的有点懒有关，只能赖自己太懒惰了。那么今年开始接着写东西吧。">
+<meta property="og:description" content="在 iOS 和 macOS 系列的开发中，我们会用到很多第三方框架来提高效率。目前第三方框架支持导入工程的方式很多，最常用的便是 CocoaPods 和 Carthage 这两个管理工具。关于上述两个的优缺点已经有很多文章介绍了，笔者只是将其使用方式记录下来，方便以后使用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-08T11:25:34.533Z">
+<meta property="og:updated_time" content="2018-04-12T05:04:22.434Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新年新面貌">
-<meta name="twitter:description" content="新的一年开始了，虽然已经过去了十二分之一，没有写年终总结但还是要迎接新面貌嘛。大学生活也已经度过了四分之三了，真的是很快，想想这几年的大学生活什么都没有记下来就有点亏亏的感觉，当然也是因为自己变的有点懒有关，只能赖自己太懒惰了。那么今年开始接着写东西吧。">
+<meta name="twitter:title" content="Carthage 和 CocoaPods 的使用">
+<meta name="twitter:description" content="在 iOS 和 macOS 系列的开发中，我们会用到很多第三方框架来提高效率。目前第三方框架支持导入工程的方式很多，最常用的便是 CocoaPods 和 Carthage 这两个管理工具。关于上述两个的优缺点已经有很多文章介绍了，笔者只是将其使用方式记录下来，方便以后使用。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://liyafly.com/post/新年新面貌.html"/>
+  <link rel="canonical" href="https://liyafly.com/post/Carthage-and-CocoaPods.html"/>
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>新年新面貌 | MyFly'Blog</title>
+  <title>Carthage 和 CocoaPods 的使用 | MyFly'Blog</title>
   
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liyafly.com/post/新年新面貌.html">
+    <link itemprop="mainEntityOfPage" href="https://liyafly.com/post/Carthage-and-CocoaPods.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李亚非">
@@ -367,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">新年新面貌</h1>
+          <h1 class="post-title" itemprop="name headline">Carthage 和 CocoaPods 的使用</h1>
         
 
         <div class="post-meta">
@@ -379,7 +379,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-31T18:55:55+08:00">2018-01-31</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T12:09:56+08:00">2018-04-12</time>
             
 
             
@@ -400,7 +400,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/开发工具/" itemprop="url" rel="index"><span itemprop="name">开发工具</span></a></span>
 
                 
                 
@@ -415,9 +415,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/post/新年新面貌.html#comments" itemprop="discussionUrl">
+                <a href="/post/Carthage-and-CocoaPods.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/post/新年新面貌.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="/post/Carthage-and-CocoaPods.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">字数统计：</span>
                 
-                <span title="字数统计">822</span>
+                <span title="字数统计">1.3k</span>
               
 
               
@@ -473,10 +473,38 @@
       
 
       
-        <p>新的一年开始了，虽然已经过去了十二分之一，没有写年终总结但还是要迎接新面貌嘛。大学生活也已经度过了四分之三了，真的是很快，想想这几年的大学生活什么都没有记下来就有点亏亏的感觉，当然也是因为自己变的有点懒有关，只能赖自己太懒惰了。那么今年开始接着写东西吧。<br><a id="more"></a><br>想当年，自己中二病的时候在新浪博客和 QQ 空间写下来不少文字，有诗歌有自己乱写的短篇小说，现在回想起来真的好中二，各种垃圾，还好都已经尘封了起来。自从 15 年入大学后，新浪博客已经基本不上了，QQ 空间里的文章都已经删了。久而久之，再也没有写过东西了。</p>
-<p>在去年春天开学之后，正好看见我们老四在折腾 hexo 博客，突然又想写点东西了，也记录一下大学里学到的东西，做个笔记，日常和技术类型博客（当然是折腾无止境的思想指使着我干的）。这一折腾就是快一年啊，当时折腾的时候是为了选好看的主题而发愁，在主题官网看了好久也下了不少，好看的主题倒是不少，但都不是很喜欢的类型。想要比较简洁的而且定制性很强的主题，慢慢的发现 <a href="http://theme-next.iissnan.com" target="_blank" rel="noopener">next</a> 这个主题，于是开始研究如何配置起来好玩。（最新的next主题在GitHub上迁移到了新的组织名下，并做了一点点的完善，链接如下  <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a> )</p>
-<p>这期间翻了不少博客和文档，也中断过很久，之后电脑重装过几次就放弃了在写博客的念头。总之在今天之前我是真的是在折腾而没有静下心来写下来一篇文章。曾经还想把如何搭建 hexo + GitHub 的博客写下来，但放弃了，因为它已经很多了而且很完善了，一搜就有很多，我再写也大抵相同，没有什么新意。直到年底，我又捡起了这个博客。原因还是那个，写写学到的内容，分享笔记和日常的技术博客，当然也为了督促自己。</p>
-<p>新年新气象，新面貌，那就从这篇博客开始吧，也算立一个 flag，多写点博客，争取半个月一篇文章。<br>emmmm，先这样吧。去看月全食的直播了。</p>
+        <p>在 iOS 和 macOS 系列的开发中，我们会用到很多第三方框架来提高效率。目前第三方框架支持导入工程的方式很多，最常用的便是 CocoaPods 和 Carthage 这两个管理工具。关于上述两个的优缺点已经有很多文章介绍了，笔者只是将其使用方式记录下来，方便以后使用。</p>
+<a id="more"></a>
+<h1 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h1><h2 id="安装和更新"><a href="#安装和更新" class="headerlink" title="安装和更新"></a>安装和更新</h2><p>安装非常简单，按照官网的指导就可以很轻松的进行安装和更新。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
+<p>这样我们就安装好 CocoaPods 了，如果出现一些网络问题，很大一部分原因是没有进行科学上网，也有很多其他的解决方案，本文就不在过多的介绍。</p>
+<p>更新的话，重新安装 CocoaPods 就可以。或者更新为预览版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem install cocoapods --pre</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>接下来就可以在工程中导入第三方框架，来方便的工作。</p>
+<ul>
+<li>首先在你的工程下创建一个名为 <code>Podfile</code> 的文件（注意没有任何后缀）。然后在这个文件里添加你需要的第三方框架。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> target &apos;MyAppNmae&apos; do</span><br><span class="line">   pod &apos;Alamofire&apos;, &apos;~&gt; 4.7&apos;</span><br><span class="line">   pod &apos;Charts&apos;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>或者 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">source &apos;https://github.com/CocoaPods/Specs.git&apos;</span><br><span class="line">platform :ios, &apos;10.0&apos;</span><br><span class="line">use_frameworks!</span><br><span class="line"></span><br><span class="line">target &apos;&lt;Your Target Name&gt;&apos; do</span><br><span class="line">    pod &apos;Alamofire&apos;, &apos;~&gt; 4.7&apos;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<ul>
+<li>按上述例子写好后进入工程的目录下运行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>出现 <code>pods installed</code> 字样就是成功了。<h2 id="官方帮助文档"><a href="#官方帮助文档" class="headerlink" title="官方帮助文档"></a>官方帮助文档</h2>如果需要更多的方法，可以参考 <a href="https://guides.cocoapods.org" target="_blank" rel="noopener"> CocoaPods 的官方文档 </a></li>
+</ul>
+<h1 id="Carthage"><a href="#Carthage" class="headerlink" title="Carthage"></a>Carthage</h1><h2 id="安装和更新-1"><a href="#安装和更新-1" class="headerlink" title="安装和更新"></a>安装和更新</h2><p>使用 <a href="https://brew.sh/index_zh-cn.html" target="_blank" rel="noopener"><code>Homebrew</code></a> 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
+<p>升级</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br><span class="line">$ brew upgrade carthage</span><br></pre></td></tr></table></figure>
+<p>卸载的话利用 Homebrew 卸载就好。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew uninstall carthage</span><br></pre></td></tr></table></figure>
+<h2 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h2><p>进入你的工程下，创建名为 <code>Cartfile</code> （ 同 <code>Podfile</code> ）。</p>
+<p>在其编辑，添加依赖的第三方框架库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;Alamofire/Alamofire&quot; ~&gt; 4.7</span><br></pre></td></tr></table></figure>
+<p>然后运行 <code>$ carthage update</code> 便可</p>
+<h2 id="帮助文档"><a href="#帮助文档" class="headerlink" title="帮助文档"></a>帮助文档</h2><p>剩下需要将第三方库的一些动态文件添加到工程里。由于本人能力有限，不会制作动图之类的，如何引入 Carthage 依赖库到 Xcode，这部分，可以参考 <a href="https://www.zybuluo.com/Sweetfish/note/1013133" target="_blank" rel="noopener">Carthage的使用</a> 和 <a href="https://github.com/Carthage/Carthage" target="_blank" rel="noopener">Carthage 官方文档说明的 Adding frameworks to an application 内容</a></p>
 
       
     </div>
@@ -498,7 +526,7 @@
     <strong>本文作者： </strong>李亚非</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://liyafly.com/post/新年新面貌.html" title="新年新面貌">https://liyafly.com/post/新年新面貌.html</a>
+    <a href="https://liyafly.com/post/Carthage-and-CocoaPods.html" title="Carthage 和 CocoaPods 的使用">https://liyafly.com/post/Carthage-and-CocoaPods.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -509,6 +537,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+        </div>
+      
 
       
       
@@ -518,15 +552,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/post/swift-substring-methods.html" rel="next" title="Swift 中 Substring 的方法使用">
+                <i class="fa fa-chevron-left"></i> Swift 中 Substring 的方法使用
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/hexo-improve-summarize.html" rel="prev" title="Hexo 优化与 Markdown 编辑器推荐">
-                Hexo 优化与 Markdown 编辑器推荐 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -585,8 +619,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -711,6 +754,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CocoaPods"><span class="nav-number">1.</span> <span class="nav-text">CocoaPods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装和更新"><span class="nav-number">1.1.</span> <span class="nav-text">安装和更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官方帮助文档"><span class="nav-number">1.3.</span> <span class="nav-text">官方帮助文档</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Carthage"><span class="nav-number">2.</span> <span class="nav-text">Carthage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装和更新-1"><span class="nav-number">2.1.</span> <span class="nav-text">安装和更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-1"><span class="nav-number">2.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助文档"><span class="nav-number">2.3.</span> <span class="nav-text">帮助文档</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -880,9 +939,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://liyafly.com/post/新年新面貌.html';
-        this.page.identifier = '/post/新年新面貌.html';
-        this.page.title = '新年新面貌';
+        this.page.url = 'https://liyafly.com/post/Carthage-and-CocoaPods.html';
+        this.page.identifier = '/post/Carthage-and-CocoaPods.html';
+        this.page.title = 'Carthage 和 CocoaPods 的使用';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
